@@ -1,0 +1,55 @@
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+import Hero from '@/components/landing/Hero'
+import Features from '@/components/landing/Features'
+import ProductShowcase from '@/components/landing/ProductShowcase'
+import Testimonials from '@/components/landing/Testimonials'
+import FAQ from '@/components/landing/FAQ'
+
+export default function HomePage() {
+  return (
+    <main className="min-h-screen">
+      <Navbar />
+      <Hero />
+      <Features />
+      <ProductShowcase />
+      <Testimonials />
+      <FAQ />
+      
+      {/* Final CTA */}
+      <section className="py-20 bg-gradient-to-br from-indigo-600 to-purple-700">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to start selling?
+          </h2>
+          <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">
+            Join 5,000+ sellers who switched from Whop & Shopify. 
+            Start for $12/mo. Save $13 immediately vs your current platform.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/signup"
+              className="inline-flex items-center justify-center bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition shadow-lg"
+            >
+              Start your free trial
+              <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <a
+              href="/pricing"
+              className="inline-flex items-center justify-center bg-transparent text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10 transition border-2 border-white"
+            >
+              View pricing
+            </a>
+          </div>
+          <p className="text-indigo-200 mt-6 text-sm">
+            No credit card required • 14-day free trial • Cancel anytime
+          </p>
+        </div>
+      </section>
+      
+      <Footer />
+    </main>
+  )
+}
