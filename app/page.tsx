@@ -14,26 +14,31 @@ export default function Home() {
       <FAQ />
       
       {/* Call to Action Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-6">
-            Ready to Upgrade Your Setup?
+      <section className="py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-50 rounded-full blur-3xl opacity-50 z-0"></div>
+        
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-bold mb-8">
+            Limited time offer
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Shopify & Whop</span> killer is here.
           </h2>
-          <p className="text-xl text-gray-600 mb-10">
-            Join thousands of satisfied customers who have elevated their digital workspace with SaaSStore. 
-            Free shipping on orders over $100.
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+            Stop overpaying for your store. Start for <strong className="text-gray-900">$15/mo</strong> and join the next generation of digital entrepreneurs.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg shadow-blue-200">
-              Browse All Products
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <button className="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-pink-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:opacity-90 transition-all shadow-xl shadow-purple-200 transform hover:-translate-y-1">
+              Build your store now
             </button>
-            <button className="bg-gray-100 text-gray-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-200 transition-all">
-              Contact Sales
+            <button className="w-full sm:w-auto bg-white text-gray-900 px-10 py-5 rounded-2xl font-bold text-xl border border-gray-200 hover:bg-gray-50 transition-all shadow-sm">
+              View demo
             </button>
           </div>
-          <p className="mt-8 text-sm text-gray-500 italic">
-            * 90-day money-back guarantee. No questions asked.
-          </p>
+          <div className="mt-12 flex items-center justify-center gap-8 text-gray-400 grayscale opacity-70">
+            {/* Trusted by logos would go here */}
+            <span className="font-bold text-lg">Trusted by 5,000+ sellers</span>
+          </div>
         </div>
       </section>
     </main>
