@@ -1,11 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useBuilder } from '@/context/BuilderContext';
-import { Save, Download, Upload, Eye, Undo, Redo } from 'lucide-react';
+import { Save, Download, Upload, Eye, Undo, Redo, Layout } from 'lucide-react';
+import TemplatesGallery from './TemplatesGallery';
 
 export default function Toolbar() {
   const { pageConfig, importConfig } = useBuilder();
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
 
   const handleExport = () => {
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pageConfig, null, 2));
@@ -60,6 +62,14 @@ export default function Toolbar() {
       </div>
 
       <div className="flex items-center gap-3">
+        <button 
+          onClick={() => setIsGalleryOpen(true)}
+          className="flex items-center gap-2 px-3 py-2 text-sm font-bold text-indigo-600 hover:bg-indigo-50 rounded-lg transition-all border border-indigo-100"
+        >
+          <Layout size={18} />
+          Templates
+        </button>
+        <div className="h-6 w-px bg-gray-200 mx-1" />
         <label className="flex items-center gap-2 px-3 py-2 text-sm font-semibold text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all cursor-pointer">
           <Upload size={18} />
           Import
@@ -77,6 +87,8 @@ export default function Toolbar() {
           Save Changes
         </button>
       </div>
+
+      <TemplatesGallery isOpen={isGalleryOpen} onClose={() => setIsGalleryOpen(false)} />
     </header>
   );
 }
