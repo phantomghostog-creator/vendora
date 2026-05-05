@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ShoppingCart, Menu, User, LogOut } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { supabase } from '@/lib/supabase';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const { itemCount } = useCart();
   const [user, setUser] = useState<any>(null);
 
@@ -21,6 +23,8 @@ export default function Navbar() {
 
     return () => subscription.unsubscribe();
   }, []);
+
+  if (pathname.startsWith('/admin')) return null;
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
@@ -42,6 +46,9 @@ export default function Navbar() {
               </Link>
               <Link href="/products" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 Products
+              </Link>
+              <Link href="/pricing" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                Pricing
               </Link>
               <Link href="/#faq" className="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">
                 FAQ

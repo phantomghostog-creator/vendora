@@ -1,7 +1,12 @@
+'use client';
+
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Globe, Share2, MessageCircle, Play, Send } from 'lucide-react';
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname.startsWith('/admin')) return null;
   return (
     <footer className="bg-gray-900 text-gray-300 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,6 +30,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6">Shop</h4>
             <ul className="space-y-4">
               <li><Link href="/products" className="hover:text-white transition-colors">All Products</Link></li>
+              <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
               <li><Link href="/category/electronics" className="hover:text-white transition-colors">Electronics</Link></li>
               <li><Link href="/category/accessories" className="hover:text-white transition-colors">Accessories</Link></li>
               <li><Link href="/category/wellness" className="hover:text-white transition-colors">Wellness</Link></li>
