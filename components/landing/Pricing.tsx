@@ -64,7 +64,7 @@ const plans = [
   },
   {
     name: 'Enterprise',
-    price: 297,
+    price: 304,
     shopifyPrice: 299,
     description: 'Advanced features for high-volume stores.',
     features: [
@@ -155,10 +155,21 @@ export default function Pricing() {
                   <span className="text-gray-500 font-medium">/mo</span>
                 </div>
                 <div className="mt-2 flex items-center gap-2 text-xs font-bold">
-                  <span className="text-gray-400 line-through">Shopify: ${plan.shopifyPrice}/mo</span>
-                  <span className="text-green-600 text-[10px] bg-green-50 px-1.5 py-0.5 rounded">
-                    Save ${plan.shopifyPrice - plan.price}/mo
-                  </span>
+                  {plan.price < plan.shopifyPrice ? (
+                    <>
+                      <span className="text-gray-400 line-through">Shopify: ${plan.shopifyPrice}/mo</span>
+                      <span className="text-green-600 text-[10px] bg-green-50 px-1.5 py-0.5 rounded">
+                        Save ${plan.shopifyPrice - plan.price}/mo
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-gray-400">Shopify: ${plan.shopifyPrice}/mo</span>
+                      <span className="text-blue-600 text-[10px] bg-blue-50 px-1.5 py-0.5 rounded">
+                        Premium Tier
+                      </span>
+                    </>
+                  )}
                 </div>
               </div>
 
