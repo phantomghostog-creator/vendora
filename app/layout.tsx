@@ -9,8 +9,8 @@ import { CartProvider } from "@/context/CartContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "SaaSStore | Premium Tech Accessories",
-  description: "Curated collection of high-performance tech accessories for modern professionals.",
+  title: "VENDORA | Build Your Online Store for $15/mo",
+  description: "Start selling online with VENDORA - the affordable e-commerce platform. 5 products, 2.7% fees, instant Capitec payouts. No monthly limits.",
 };
 
 export default function RootLayout({

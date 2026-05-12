@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <Link href="/" className="text-2xl font-bold text-white mb-6 block">
-              SaaSStore<span className="text-blue-500">.</span>
+              VENDORA<span className="text-blue-500">.</span>
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Premium tech accessories for modern professionals. We combine minimalist design with maximum performance.
@@ -64,7 +64,7 @@ export default function Footer() {
         </div>
         
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>&copy; {new Date().getFullYear()} SaaSStore Inc. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} VENDORA Inc. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white">Terms of Service</Link>
